@@ -1,0 +1,12 @@
+message_broker_rmq:
+      #build: ./base
+      image: rabbitmq:3.7-management
+      container_name: message_broker_rmq
+      hostname: message_broker
+      ports:
+        - 8080:15672
+      env_file:
+        - './env/amq-settings'
+      restart: always
+
+
