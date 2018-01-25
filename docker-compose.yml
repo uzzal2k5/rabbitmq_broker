@@ -1,5 +1,5 @@
 message_broker_rmq:
-      build: ./server
+      build: .
       #image: rabbitmq:3.7-management
       container_name: message_broker_rmq
       hostname: message_broker
