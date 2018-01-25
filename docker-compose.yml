@@ -1,15 +1,17 @@
 message_broker_rmq:
-      build: server
+      build: ./server
       #image: rabbitmq:3.7-management
       container_name: message_broker_rmq
       hostname: message_broker
       ports:
         - 8080:15672
+        - 5672:5672
       env_file:
         - './env/amq-settings'
       volumes:
         - ./message_broker/rabbitmq_data:/var/lib/rabbitmq
         - ./message_broker/var/log:/var/log
+        - /home/uzzal/PycharmProjects/docker_project/python_broker:/var/python_broker
       restart: always
 
 
