@@ -11,7 +11,7 @@ message_broker_rmq:
       volumes:
         - ./message_broker/rabbitmq_data:/var/lib/rabbitmq
         - ./message_broker/var/log:/var/log
-        - /home/uzzal/PycharmProjects/docker_project/python_broker:/var/python_broker
+        - ./docker_project/python_broker:/var/python_broker
       restart: always
 
 
