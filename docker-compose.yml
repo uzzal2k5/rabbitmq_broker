@@ -1,17 +1,17 @@
 message_broker_rmq:
-      build: .
+      build: server/.
       #image: rabbitmq:3.7-management
-      container_name: message_broker_rmq
-      hostname: message_broker
+      container_name: shuniRabbit
+      hostname: shuniRabbit
       ports:
         - 8080:15672
         - 5672:5672
       env_file:
         - './env/amq-settings'
       volumes:
-        - ./message_broker/rabbitmq_data:/var/lib/rabbitmq
-        - ./message_broker/var/log:/var/log
-        - ./docker_project/python_broker:/var/python_broker
+        - ./shuniRabbit/rabbitmq_data:/var/lib/rabbitmq
+        - ./shuniRabbit/var/log:/var/log
+        - ./shuniRabbit/python_broker:/var/python_broker
       restart: always
 
 
